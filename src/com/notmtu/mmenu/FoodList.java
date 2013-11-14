@@ -14,19 +14,19 @@ import android.widget.SimpleAdapter;
 
 public class FoodList extends Activity {
 	
-	List<String> my_list = new ArrayList<String>();
+	ArrayList<String> my_list = new ArrayList<String>();
 	ListView the_list;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_search);
+		setContentView(R.layout.food_list);
 		
 		the_list = (ListView) findViewById(R.id.listView);
 		my_list.add("Winning");
 		my_list.add("losing");
 		
-		ListAdapter adapt = new ArrayAdapter<String>(this, 0, my_list);
+		ArrayAdapter<String> adapt = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, my_list);
 		the_list.setAdapter(adapt);
 	}
 
